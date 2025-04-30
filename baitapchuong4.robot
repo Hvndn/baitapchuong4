@@ -29,7 +29,8 @@ Valid Login
         Log To Console    Không tìm thấy btn subbmit
     END
     # 6 Kiểm tra đăng nhập thành công
-        Page Should Contain  welcome
+        Wait Until Page Contains Element    xpath=//h6[text()="Dashboard"]    timeout=10
+Page Should Contain Element         xpath=//h6[text()="Dashboard"]
         Log To Console  Đăng nhập thành công
 Invalid Login
     [Documentation]  Test login thất bại với tài khoản không hợp lệ
@@ -51,5 +52,6 @@ Invalid Login
         Log To Console    Không tìm thấy btn subbmit
     END
     # 6 Kiểm tra đăng nhập 
-        Page Should Contain    Invalid credentials
+        Wait Until Element Is Visible    xpath=//p[contains(text(), "Invalid credentials")]    timeout=10
+Element Text Should Be           xpath=//p[contains(text(), "Invalid credentials")]    Invalid credentials
         Log To Console  Đăng nhập thất bại
