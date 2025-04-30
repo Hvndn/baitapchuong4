@@ -30,7 +30,7 @@ Valid Login
     END
     # 6 Kiểm tra đăng nhập thành công
         Wait Until Page Contains Element    xpath=//h6[text()="Dashboard"]    timeout=10
-Page Should Contain Element         xpath=//h6[text()="Dashboard"]
+        Page Should Contain Element         xpath=//h6[text()="Dashboard"]
         Log To Console  Đăng nhập thành công
 Invalid Login
     [Documentation]  Test login thất bại với tài khoản không hợp lệ
@@ -53,5 +53,5 @@ Invalid Login
     END
     # 6 Kiểm tra đăng nhập 
         Wait Until Element Is Visible    xpath=//p[contains(text(), "Invalid credentials")]    timeout=10
-Element Text Should Be           xpath=//p[contains(text(), "Invalid credentials")]    Invalid credentials
+        Element Text Should Be           xpath=//p[contains(text(), "Invalid credentials")]    Invalid credentials
         Log To Console  Đăng nhập thất bại
